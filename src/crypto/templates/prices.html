@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if notfound %}
+      {{ notfound }}
+
+    {% else %}
+        {% if crypto.Response %}
+            Sorry! "{{ quote }}" symbol doesn't exist; Please try again with a valid one.....
+        {% endif %}
+
+        {% for key,value in crypto.DISPLAY.items %}
+
+              <div class="jumbotron">
+                  <h1 class="display-4">{{ key }}</h1>
+                  <strong>Name</strong>: {{ key }}<br/>
+                  <strong>Price</strong>: {{ value.BDT.PRICE }}<br/>
+                  <strong>Day High</strong>: {{ value.BDT.HIGHDAY }}<br/>
+                  <strong>Day Low</strong>: {{ value.BDT.LOWDAY }}<br/>
+                  <strong>Market Cap</strong>: {{ value.BDT.MKTCAP }}<br/>
+
+              </div>
+              <br/><br/>
+
+        {% endfor %}
+    <br/><br/>
+
+    {% endif %}
+
+{% endblock %}
