@@ -1,2 +1,2 @@
 # Crypto
-Crypto Currency latest price and articles site(updates automatically)
+This Django powered web app updates latest Crypto Currency price and articles automatically. 
